@@ -14,7 +14,7 @@ class CreateDriver extends Component {
         this.state = {
             name: '',
             email: '',
-            rollno: ''
+            driverNum: ''
           }
         }
       
@@ -27,7 +27,7 @@ class CreateDriver extends Component {
         }
       
         onChangeDriverNum(e) {
-          this.setState({rollno: e.target.value})
+          this.setState({driverNum: e.target.value})
         }
       
         onSubmit(e) {
@@ -36,9 +36,9 @@ class CreateDriver extends Component {
           console.log(`Student successfully created!`);
           console.log(`Name: ${this.state.name}`);
           console.log(`Email: ${this.state.email}`);
-          console.log(`Roll no: ${this.state.rollno}`);
+          console.log(`Roll no: ${this.state.driverNum}`);
       
-          this.setState({name: '', email: '', rollno: ''})
+          this.setState({name: '', email: '', driverNum: ''})
         }
       
     
