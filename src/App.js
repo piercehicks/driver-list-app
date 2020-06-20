@@ -52,9 +52,9 @@ function App() {
             <div className="wrapper">
               <Switch>
                 <Route exact path='/' component={CreateDriver} />
-                <Route path="/CreateDriver" component={CreateDriver} />
-                <Route path="/EditDriver/:id" component={EditDriver} />
-                <Route path="/DriverList" component={DriverList} />
+                <Route path="/createDriver" component={CreateDriver} />
+                <Route path="/editDriver/:id" component={EditDriver} />
+                <Route path="/driverList" component={DriverList} />
               </Switch>
             </div>
           </Col>
