@@ -6,7 +6,7 @@ let mongoose = require('mongoose'),
 let driverSchema = require('../models/Driver');
 
 // CREATE Driver
-router.route('/createDriver').post((req, res, next) => {
+router.route('/create-driver').post((req, res, next) => {
   driverSchema.create(req.body, (error, data) => {
     if (error) {
       return next(error)
@@ -29,7 +29,7 @@ router.route('/').get((req, res) => {
 })
 
 // Get Single Driver
-router.route('/editDriver/:id').get((req, res) => {
+router.route('/edit-driver/:id').get((req, res) => {
   driverSchema.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error)
@@ -41,7 +41,7 @@ router.route('/editDriver/:id').get((req, res) => {
 
 
 // Update Driver
-router.route('/updateDriver/:id').put((req, res, next) => {
+router.route('/update-driver/:id').put((req, res, next) => {
   driverSchema.findByIdAndUpdate(req.params.id, {
     $set: req.body
   }, (error, data) => {
@@ -56,7 +56,7 @@ router.route('/updateDriver/:id').put((req, res, next) => {
 })
 
 // Delete Driver
-router.route('/deleteDriver/:id').delete((req, res, next) => {
+router.route('/delete-driver/:id').delete((req, res, next) => {
   driverSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);

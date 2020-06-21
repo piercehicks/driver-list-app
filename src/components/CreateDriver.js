@@ -33,10 +33,10 @@ class CreateDriver extends Component {
         onSubmit(e) {
           e.preventDefault()
       
-          console.log(`Student successfully created!`);
+          console.log(`Driver successfully created!`);
           console.log(`Name: ${this.state.name}`);
           console.log(`Email: ${this.state.email}`);
-          console.log(`Roll no: ${this.state.driverNum}`);
+          console.log(`DriverNum: ${this.state.driverNum}`);
       
           this.setState({name: '', email: '', driverNum: ''})
         }
@@ -44,7 +44,7 @@ class CreateDriver extends Component {
     
     render() {
         return (
-            <div class="form-wrapper">
+            <div className="form-wrapper">
                 <Form onSubmit={this.onSubmit}>
                     <Form.Group controlId="Name">
                         <Form.Label>Name</Form.Label>

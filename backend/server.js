@@ -17,7 +17,7 @@ app.use(cors());
 app.use('/drivers', driverRoute)
 
 mongoose.connect(
-    process.env.DATABASE_URL,
+    process.env.ATLAS_URI,
     { useUnifiedTopology: true, useNewUrlParser: true }
 )
 
