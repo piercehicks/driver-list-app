@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 class CreateDriver extends Component {
     constructor(props) {
@@ -32,6 +33,15 @@ class CreateDriver extends Component {
       
         onSubmit(e) {
           e.preventDefault()
+
+          const driverObject = {
+            name: this.state.name,
+            email: this.state.email,
+            driverNum: this.state.driverNum
+          };
+          axios.post('http://localhost:4000/drivers/add', driverObject)
+            .then(res => console.log(res.data));
+      
       
           console.log(`Driver successfully created!`);
           console.log(`Name: ${this.state.name}`);
