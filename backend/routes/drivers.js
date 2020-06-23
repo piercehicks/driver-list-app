@@ -29,13 +29,26 @@ router.route('/add').post((req, res) => {
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
+/*
 // Get Single Driver
-router.route('/update/:id').get((req, res) => {
+router.route('/edit/:id').get((req, res) => {
   Driver.findById((req.params.id)
-    .findById(req.params.id)
+    
     .then(driver => res.json(driver))
     .catch(err => res.status(400).json('Error: ' + err))
     );
+})
+*/
+
+// Get Single Player *updated from above*
+router.route('/edit/:id').get((req, res) => {
+  Driver.findById(req.params.id, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
 })
 
 // Delete Driver
@@ -45,7 +58,8 @@ router.route('/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {
+//Update Driver
+router.route('/update/:id').put((req, res) => {
   Driver.findById(req.params.id)
     .then(driver => {
       driver.name = req.body.name;

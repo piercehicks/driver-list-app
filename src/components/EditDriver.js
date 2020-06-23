@@ -22,7 +22,7 @@ class EditDriver extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/drivers/edit-driver/' + this.props.match.params.id)
+    axios.get('http://localhost:4000/drivers/edit/' + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,
@@ -56,7 +56,7 @@ class EditDriver extends Component {
         driverNum: this.state.driverNum
       };
   
-      axios.put('http://localhost:4000/drivers/update-driver/' + this.props.match.params.id, driverObject)
+      axios.put('http://localhost:4000/drivers/update/' + this.props.match.params.id, driverObject)
         .then((res) => {
           console.log(res.data)
           console.log('Driver successfully updated')

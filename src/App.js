@@ -56,7 +56,7 @@ function App() {
               <Switch>
                 <Route exact path='/' component={CreateDriver} />
                 <Route path="/add" component={CreateDriver} />
-                <Route path="/update/:id" component={EditDriver} />
+                <Route path="/edit/:id" component={EditDriver} />
                 <Route path="/driver-list" component={DriverList} />
               </Switch>
             </div>

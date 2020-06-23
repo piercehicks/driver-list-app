@@ -9,14 +9,36 @@ class DriverTableRow extends Component {
         this.deleteDriver = this.deleteDriver.bind(this);
     }
 
-    deleteDriver() {
-        axios.delete('http://localhost:4000/drivers/delete-driver/' + this.props.obj._id)
+    /*
+    //New Delete Driver
+    deleteDriver(id) {
+        axios.delete('http://localhost:4000/drivers/'+id)
+          .then(response => { console.log(response.data)});
+    
+        this.setState({
+          drivers: this.state.drivers.filter(el => el._id !== id)
+        })
+      }
+      */
+
+      deleteDriver() {
+        axios.delete('http://localhost:4000/drivers/' + this.props.obj._id)
             .then((res) => {
                 console.log('Driver successfully deleted!')
             }).catch((error) => {
                 console.log(error)
             })
     }
+   /* 
+    deleteDriver(id) {
+        axios.delete('http://localhost:4000/drivers/:id/' + this.props.obj._id)
+            .then((res) => {
+                console.log('Driver successfully deleted!')
+            }).catch((error) => {
+                console.log(error)
+            })
+    }
+    */
 
 
     render() {
@@ -26,7 +48,7 @@ class DriverTableRow extends Component {
                 <td>{this.props.obj.email}</td>
                 <td>{this.props.obj.driverNum}</td>
                 <td>
-                    <Link className="edit-link" to={"/edit-driver/" + this.props.obj._id}>
+                    <Link className="edit-link" to={"/edit/" + this.props.obj._id}>
                         Edit
                     </Link>
                     <Button 
