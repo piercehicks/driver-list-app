@@ -15,4 +15,6 @@ let driverSchema = new Schema({
     collection: 'drivers'
 })
 
-module.exports = mongoose.model('Driver', driverSchema);
+const Driver = mongoose.model('Driver', driverSchema);
+
+module.exports = Driver;
