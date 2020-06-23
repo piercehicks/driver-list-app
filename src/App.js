@@ -23,24 +23,20 @@ function App() {
           <Container>
 
             <Navbar.Brand>
-              <Link to={"/create-driver"} className="nav-link">
+              <Link to={"/add"} className="nav-link">
                 Company Drivers 
               </Link>
             </Navbar.Brand>
 
             <Nav className="justify-content-end">
               <Nav>
-                <Link to={"/create-driver"} className="nav-link">
+                <Link to={"/add"} className="nav-link">
                   Create Driver
                 </Link>
               </Nav>
 
 
-              {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
-                  Edit Student
-                </Link>
-              </Nav> */}
+             
 
               <Nav>
                 <Link to={"/driver-list"} className="nav-link">
@@ -59,8 +55,8 @@ function App() {
             <div className="wrapper">
               <Switch>
                 <Route exact path='/' component={CreateDriver} />
-                <Route path="/create-driver" component={CreateDriver} />
-                <Route path="/edit-driver/:id" component={EditDriver} />
+                <Route path="/add" component={CreateDriver} />
+                <Route path="/update/:id" component={EditDriver} />
                 <Route path="/driver-list" component={DriverList} />
               </Switch>
             </div>
